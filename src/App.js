@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import SpeechIcon from "./components/atoms/SpeechIcon";
 import Footer from "./components/atoms/Footer";
 import "./App.css";
@@ -12,6 +12,21 @@ function App() {
         <div className="container mx-auto flex items-center">
           <SpeechIcon className="h-6 w-6 mr-2" />
           <h1 className="text-xl font-bold">My Awesome Posts</h1>
+        </div>
+        <div class="flex space-x-4 mt-2">
+          <Link
+            to="/"
+            class="rounded-md  px-3 py-2 text-sm font-medium text-white"
+            aria-current="page"
+          >
+            Home
+          </Link>
+          <Link
+            to="/posts"
+            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >
+            Posts
+          </Link>
         </div>
       </header>
       {/* my app pages goes here */}
