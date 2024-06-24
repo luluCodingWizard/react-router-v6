@@ -33,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<Posts />}>
-          <Route path="postdetails" element={<h1>My details goes here</h1>} />
+          <Route path=":postId" element={<h1>My details goes here</h1>} />
         </Route>
       </Routes>
       <Footer />
