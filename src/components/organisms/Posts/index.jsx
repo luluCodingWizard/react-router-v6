@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://jsonplaceholder.typicode.com/posts?_start=0&_limit=5")
       .then((response) => response.json())
       .then((data) => setPosts(data));
   }, []);
@@ -19,6 +20,7 @@ const Posts = () => {
           </li>
         ))}
       </ul>
+      <Outlet />
     </div>
   );
 };

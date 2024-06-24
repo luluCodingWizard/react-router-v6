@@ -32,7 +32,9 @@ function App() {
       {/* my app pages goes here */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts" element={<Posts />}>
+          <Route path="postdetails" element={<h1>My details goes here</h1>} />
+        </Route>
       </Routes>
       <Footer />
     </>
