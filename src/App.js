@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import SpeechIcon from "./components/atoms/SpeechIcon";
 import Footer from "./components/atoms/Footer";
+import PostDetails from "./components/molecules/PostDetails";
 import "./App.css";
 import Home from "./Home";
 import Posts from "./components/organisms/Posts";
@@ -33,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<Posts />}>
-          <Route path=":postId" element={<h1>My details goes here</h1>} />
+          <Route path=":postId" element={<PostDetails />} />
         </Route>
       </Routes>
       <Footer />
