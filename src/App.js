@@ -37,6 +37,7 @@ function App() {
       {/* my app pages goes here */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<h1>Page does not Exist...!!!</h1>} />
         <Route path="/posts" element={<Posts />}>
           <Route path=":postId" element={<PostDetails />} />
         </Route>
