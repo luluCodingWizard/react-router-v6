@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -16,9 +16,16 @@ const Posts = () => {
       <ul>
         {posts.map((post) => (
           <li key={post.id} className="mb-2">
-            <Link to={`${post.id}`} className="text-blue-500">
+            <NavLink
+              to={`${post.id}`}
+              className={({ isActive }) =>
+                `shared-class text-blue-600 ${
+                  isActive ? " bg-gray-400" : " bg-transparent"
+                }`
+              }
+            >
               {post.title}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>

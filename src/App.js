@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import SpeechIcon from "./components/atoms/SpeechIcon";
 import Footer from "./components/atoms/Footer";
 import PostDetails from "./components/molecules/PostDetails";
@@ -14,20 +14,24 @@ function App() {
           <SpeechIcon className="h-6 w-6 mr-2" />
           <h1 className="text-xl font-bold">My Awesome Posts</h1>
         </div>
-        <div class="flex space-x-4 mt-2">
-          <Link
+        <div className="flex space-x-4 mt-2">
+          <NavLink
             to="/"
-            class="rounded-md  px-3 py-2 text-sm font-medium text-white"
+            className={({ isActive }) =>
+              `shared-class ${isActive ? " text-black" : "text-white"}`
+            }
             aria-current="page"
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/posts"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className={({ isActive }) =>
+              `shared-class ${isActive ? " text-black" : "text-white"}`
+            }
           >
             Posts
-          </Link>
+          </NavLink>
         </div>
       </header>
       {/* my app pages goes here */}
