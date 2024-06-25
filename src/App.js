@@ -5,6 +5,7 @@ import PostDetails from "./components/molecules/PostDetails";
 import "./App.css";
 import Home from "./Home";
 import Posts from "./components/organisms/Posts";
+import Contact from "./components/organisms/Contact";
 
 function App() {
   return (
@@ -32,11 +33,24 @@ function App() {
           >
             Posts
           </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `shared-class ${isActive ? " text-black" : "text-white"}`
+            }
+          >
+            Contact us
+          </NavLink>
         </div>
       </header>
       {/* my app pages goes here */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="contact" element={<Contact />} />
+        <Route
+          path="confirmation"
+          element={<h1>You submitted your request successfully</h1>}
+        />
         <Route path="*" element={<h1>Page does not Exist...!!!</h1>} />
         <Route path="/posts" element={<Posts />}>
           <Route index element={<b>Select a Post to see its content</b>} />
