@@ -39,6 +39,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<h1>Page does not Exist...!!!</h1>} />
         <Route path="/posts" element={<Posts />}>
+          <Route index element={<b>Select a Post to see its content</b>} />
           <Route path=":postId" element={<PostDetails />} />
         </Route>
       </Routes>
