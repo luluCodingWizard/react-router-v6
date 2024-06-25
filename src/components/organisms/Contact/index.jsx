@@ -9,7 +9,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform form validation or API calls here
-    navigate("/confirmation");
+    navigate("/confirmation", { state: { name, email } });
   };
 
   return (

@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./Home";
 import Posts from "./components/organisms/Posts";
 import Contact from "./components/organisms/Contact";
+import Confirmation from "./components/organisms/Confirmation";
 
 function App() {
   return (
@@ -47,10 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="contact" element={<Contact />} />
-        <Route
-          path="confirmation"
-          element={<h1>You submitted your request successfully</h1>}
-        />
+        <Route path="confirmation" element={<Confirmation />} />
         <Route path="*" element={<h1>Page does not Exist...!!!</h1>} />
         <Route path="/posts" element={<Posts />}>
           <Route index element={<b>Select a Post to see its content</b>} />
